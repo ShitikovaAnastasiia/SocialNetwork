@@ -1,0 +1,23 @@
+
+.posts{
+    width: 70%;
+    margin-top: 10%;
+}
+textarea {
+    width: 552px;
+    height: 30px;
+    background: #FFFFFF;
+    opacity: 0.9;
+    border: 1px solid #E7E8EC;
+    box-shadow: inset 0px -1px 0px #D3D9DE;
+    border-radius: 5px;
+}
+.button{
+    width: 80px;
+    height: 30px;
+    left: calc(50% - 132px/2);
+    top: 161px;
+    background: #5181B8;
+    border-radius: 4px;
+    border-width: 0px;
+}
