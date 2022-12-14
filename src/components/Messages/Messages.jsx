@@ -3,18 +3,23 @@ import {NavLink} from "react-router-dom";
 import MessageItem from "./MessageItem/MessageItem";
 
 
+const Message = (props) => {
+    return (<>
+            <div className={classes.message}>{props.message}</div>
+        </>
+    )
+}
 
-
-const Messages = () =>{
-    return(
+const Messages = () => {
+    return (
         <div className={classes.dialog_wrapper}>
             <div className={classes.dialogs}>
-               <MessageItem name='Ana'/>
-                <MessageItem name='John'/>
+                <MessageItem name='Ana' id='1'/>
+                <MessageItem name='John' id='2'/>
+                <MessageItem name='John' id='3'/>
             </div>
             <div className={classes.messages}>
-                <div className={classes.message}>Hi</div>
-                <div className={classes.message}>How are you?</div>
+                <Message message='Hi'/>
             </div>
         </div>
 
