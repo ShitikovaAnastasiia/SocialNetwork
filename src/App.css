@@ -23,7 +23,11 @@
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
 }
-
+.content-wrapper {
+    grid-area: c;
+    background: white;
+    border-radius: 10px;
+}
 
 
 

@@ -6,7 +6,7 @@ const Post = (props) => {
                         alt="Rectangle-16"/></span>
             <span className={classes.posts_test}>{props.message}</span>
 
-            <div className={classes.like}>Like{props.like}</div>
+            <div className={classes.like}>Like</div>{props.like}
         </div>
     )
 }

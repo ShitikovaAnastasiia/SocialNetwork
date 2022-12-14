@@ -6,4 +6,6 @@
 
 .header img {
     width: 90px;
+    border-radius: 10px;
+    height: 100%;
 }
