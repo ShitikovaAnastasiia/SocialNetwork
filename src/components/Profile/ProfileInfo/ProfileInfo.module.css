@@ -1,0 +1,10 @@
+.main_content_img {
+    border-radius: 10px;
+    width: 100%;
+}
+.ava{
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px #DCDCDC;
+    border: 1px solid #D3D9DE;
+}

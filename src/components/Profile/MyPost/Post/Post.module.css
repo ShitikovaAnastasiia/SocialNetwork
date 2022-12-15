@@ -1,11 +1,15 @@
 .posts_test{
     margin-top: 20px;
-    background: #F5F5F5;
 }
 .ava{
     width: 50px;
     border-radius: 50%;
+    box-shadow: 3px 3px 3px #DCDCDC;
+    border: 1px solid #D3D9DE;
 }
 .like{
     font-size: 10px;
+}
+.posts{
+    margin-top: 40px;
 }
