@@ -2,6 +2,7 @@
 .posts{
     width: 70%;
     margin-top: 10%;
+    margin-left: 20px;
 }
 textarea {
     width: 552px;
@@ -12,7 +13,10 @@ textarea {
     box-shadow: inset 0px -1px 0px #D3D9DE;
     border-radius: 5px;
     resize: none;
+    outline: none;
+    -moz-appearance: none;
 }
+
 .button{
     width: 80px;
     height: 30px;

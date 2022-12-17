@@ -9,7 +9,7 @@ import Settings from "./components/Settings/Settings";
 import './normalize.css'
 import './App.css';
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='container'>
@@ -19,7 +19,7 @@ const App = () => {
                     <div className='content-wrapper'>
                         <Routes>
                             <Route path="/Profile/*" element={<Profile/>}/>
-                            <Route path="/Messages/*" element={<Messages/>}/>
+                            <Route path="/Messages/*" element={<Messages messageData={props.messageData} userData={props.userData}/>}/>
                             <Route path="/News/*" element={<News/>}/>
                             <Route path="/Music/*" element={<Music/>}/>
                             <Route path="/Settings/*" element={<Settings/>}/>

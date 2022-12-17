@@ -10,24 +10,27 @@ const Message = (props) => {
     )
 }
 
-const Messages = () => {
-    const userData = [
-        {user: 'Ana', id: 1},
-        {user: 'John', id: 2},
-        {user: 'Mark', id: 3}
-    ]
-    const messageData = [
-        {message: 'Hi', id: 1}
-    ]
+const Messages = (props) => {
+    // const userData = [
+    //     {user: 'Ana', id: 1},
+    //     {user: 'John', id: 2},
+    //     {user: 'Mark', id: 3}
+    // ]
+    // const messageData = [
+    //     {message: 'Hi', id: 1},
+    //     {message: 'How are you?', id: 2}
+    // ]
+    const dialogsElement = props.userData.map(u => <MessageItem name={u.user} id={u.id}/>)
+    const messageElement = props.messageData.map(m => <Message message={m.message} id={m.id}/>)
+
+
     return (
         <div className={classes.dialog_wrapper}>
             <div className={classes.dialogs}>
-                <MessageItem name={userData[0].user} id={userData[0].id}/>
-                <MessageItem name={userData[1].user} id={userData[1].id}/>
-                <MessageItem name={userData[2].user} id={userData[2].id}/>
+                {dialogsElement}
             </div>
             <div className={classes.messages}>
-                <Message message={messageData[0].message} id={messageData[0].id}/>
+                {messageElement}
             </div>
         </div>
 
