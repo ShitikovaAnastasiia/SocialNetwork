@@ -20,8 +20,8 @@ const Messages = (props) => {
     //     {message: 'Hi', id: 1},
     //     {message: 'How are you?', id: 2}
     // ]
-    const dialogsElement = props.userData.map(u => <MessageItem name={u.user} id={u.id}/>)
-    const messageElement = props.messageData.map(m => <Message message={m.message} id={m.id}/>)
+    const dialogsElement = props.state.profilePage.userData.map(u => <MessageItem name={u.user} id={u.id}/>)
+    const messageElement = props.state.messagePage.messageData.map(m => <Message message={m.message} id={m.id}/>)
 
 
     return (

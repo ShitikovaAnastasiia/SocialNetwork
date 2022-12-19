@@ -8,6 +8,8 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import './normalize.css'
 import './App.css';
+import state from "./redux/state";
+import FriendsPage from "./components/Friends/FriendsPage/FriendsPage";
 
 const App = (props) => {
     return (
@@ -15,14 +17,15 @@ const App = (props) => {
             <div className='container'>
                 <div className="app-wrapper">
                     <Header/>
-                    <Nav/>
+                    <Nav state={state}/>
                     <div className='content-wrapper'>
                         <Routes>
-                            <Route path="/Profile/*" element={<Profile/>}/>
-                            <Route path="/Messages/*" element={<Messages messageData={props.messageData} userData={props.userData}/>}/>
+                            <Route path="/Profile/*" element={<Profile state={props.state}/>}/>
+                            <Route path="/Messages/*" element={<Messages state={props.state}/>}/>
                             <Route path="/News/*" element={<News/>}/>
                             <Route path="/Music/*" element={<Music/>}/>
                             <Route path="/Settings/*" element={<Settings/>}/>
+                            <Route path="/Friends/*" element={<FriendsPage/>}/>
                         </Routes>
                     </div>
                 </div>
