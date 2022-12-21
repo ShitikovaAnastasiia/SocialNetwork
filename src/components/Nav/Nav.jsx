@@ -1,8 +1,8 @@
-import classes from './Nav.module.css'
+
 import {Link, NavLink} from "react-router-dom";
 import Friends from "../Friends/Friends";
 import state from "../../redux/state";
-
+import classes from './Nav.module.css'
 const Nav = (props) => {
 
     return (
@@ -22,8 +22,8 @@ const Nav = (props) => {
             <div className={classes.nav_item}><NavLink to='/Settings' className={({isActive}) =>
                 isActive ? classes.active_link : undefined
             }>Settings</NavLink></div>
- <NavLink to='/Friends'>
-            <Friends user={state.profilePage.userData}/></NavLink>
+            <NavLink to='/Friends'>
+                <Friends user={state.profilePage.userData}/></NavLink>
         </nav>
     )
 };

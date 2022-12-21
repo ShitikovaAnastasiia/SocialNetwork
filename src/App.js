@@ -6,10 +6,10 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import FriendsPage from "./components/Friends/FriendsPage/FriendsPage";
 import './normalize.css'
 import './App.css';
-import state from "./redux/state";
-import FriendsPage from "./components/Friends/FriendsPage/FriendsPage";
+import {addMessage, updateNewMessageText} from "./redux/state";
 
 const App = (props) => {
     return (
@@ -17,11 +17,11 @@ const App = (props) => {
             <div className='container'>
                 <div className="app-wrapper">
                     <Header/>
-                    <Nav state={state}/>
+                    <Nav state={props.state}/>
                     <div className='content-wrapper'>
                         <Routes>
-                            <Route path="/Profile/*" element={<Profile state={props.state}/>}/>
-                            <Route path="/Messages/*" element={<Messages state={props.state}/>}/>
+                            <Route path="/Profile/*" element={<Profile state={props.state} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}/>
+                            <Route path="/Messages/*" element={<Messages state={props.state} updateNewMessageText={props.updateNewMessageText} addMessage={props.addMessage}/>}/>
                             <Route path="/News/*" element={<News/>}/>
                             <Route path="/Music/*" element={<Music/>}/>
                             <Route path="/Settings/*" element={<Settings/>}/>
