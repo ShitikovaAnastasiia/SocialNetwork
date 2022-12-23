@@ -9,9 +9,9 @@ import Settings from "./components/Settings/Settings";
 import FriendsPage from "./components/Friends/FriendsPage/FriendsPage";
 import './normalize.css'
 import './App.css';
-import {addMessage, updateNewMessageText} from "./redux/state";
 
 const App = (props) => {
+    debugger;
     return (
         <BrowserRouter>
             <div className='container'>
