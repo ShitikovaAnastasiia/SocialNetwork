@@ -11,8 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
 
-            <App state={store.state} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}
-                 updateNewMessageText={store.updateNewMessageText.bind(store)} addMessage={store.addMessage.bind(store)}/>
+            <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>
     );
 }

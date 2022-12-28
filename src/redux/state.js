@@ -1,5 +1,5 @@
 const store = {
-    state: {
+    _state: {
         profilePage: {
             userData: [
                 {user: 'Ana', id: 1},
@@ -22,39 +22,46 @@ const store = {
 
 
     },
-    getState(){
-        return this.state
+    getState() {
+        return this._state
     },
-    rerenderTree() {
+    callSub() {
 
     },
-    addPost() {
+    subscribe(observer) {
+        this.callSub = observer
+    },
+    _addPost() {
         const newPost = {
-            message: this.state.profilePage.newPostText,
+            message: this._state.profilePage.newPostText,
             like: 0,
             id: 3
         };
-        this.state.profilePage.postData.push(newPost)
-        this.rerenderTree(this.state)
+        this._state.profilePage.postData.push(newPost)
+        this.callSub(this._state)
     },
-    updateNewPostText(newText) {
-        this.state.profilePage.newPostText = newText;
-        this.rerenderTree(this.state)
+    _updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText;
+        this.callSub(this._state)
     },
     addMessage() {
         const newMessage = {
-            message: this.state.messagePage.newMessageText,
+            message: this._state.messagePage.newMessageText,
             id: 3
         };
-        this.state.messagePage.messageData.push(newMessage)
-        this.rerenderTree(this.state)
+        this._state.messagePage.messageData.push(newMessage)
+        this.callSub(this._state)
     },
     updateNewMessageText(newText) {
-        this.state.messagePage.newMessageText = newText;
-        this.rerenderTree(this.state)
+        this._state.messagePage.newMessageText = newText;
+        this.callSub(this._state)
     },
-    subscribe(observer) {
-        this.rerenderTree = observer
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._addPost()
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._updateNewPostText(action.newText)
+        }
     }
 }
 export default store;
