@@ -1,7 +1,6 @@
 .dialog_wrapper{
     display: grid;
     grid-template-columns: 3fr 10fr;
-    margin-top: 20px;
     height: 100vw;
 }
 .dialogs{
@@ -10,11 +9,22 @@
 }
 .messages{
     border-left: 2px solid #4A76A8;
+    background-image: url("https://krot.info/uploads/posts/2021-02/thumbs/1613661552_63-p-foni-dlya-chatov-telegram-63.jpg");
 }
 .message{
     padding: 10px;
     margin-left: 30px;
+    background-color: white;
+    color: black;
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 .textarea{
     margin-top: 110px;
+}
+.username{
+    color: orange;
+    font-size: 10px;
+    margin-left: 60%;
 }

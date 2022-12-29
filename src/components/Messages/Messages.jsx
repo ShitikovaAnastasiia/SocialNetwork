@@ -1,10 +1,12 @@
 import MessageItem from "./MessageItem/MessageItem";
 import classes from './Messages.module.css'
 import React from "react";
+import {addMessageActionCreator, onMessageChangeActionCreator} from "../../redux/state";
 
 const Message = (props) => {
     return (<>
             <div className={classes.message}>{props.message}</div>
+            <div className={classes.username}>Ana</div>
         </>
     )
 }
@@ -14,13 +16,11 @@ const Messages = (props) => {
 
     const newMessageElement = React.createRef();
     const addMessage = () => {
-        const text = newMessageElement.current.value
-        props.addMessage()
-        props.updateNewMessageText('');
+        props.dispatch(addMessageActionCreator())
     }
     const onMessageChange = () => {
         const text = newMessageElement.current.value
-        props.updateNewMessageText(text);
+        props.dispatch(onMessageChangeActionCreator(text));
     }
     const dialogsElement = props.state.profilePage.userData.map(u => <MessageItem name={u.user} id={u.id}/>)
     const messageElement = props.state.messagePage.messageData.map(m => <Message message={m.message} id={m.id}/>)

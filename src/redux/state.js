@@ -44,7 +44,7 @@ const store = {
         this._state.profilePage.newPostText = newText;
         this.callSub(this._state)
     },
-    addMessage() {
+    _addMessage() {
         const newMessage = {
             message: this._state.messagePage.newMessageText,
             id: 3
@@ -52,16 +52,26 @@ const store = {
         this._state.messagePage.messageData.push(newMessage)
         this.callSub(this._state)
     },
-    updateNewMessageText(newText) {
+    _updateNewMessageText(newText) {
         this._state.messagePage.newMessageText = newText;
         this.callSub(this._state)
     },
     dispatch(action) {
         if (action.type === 'ADD-POST') {
             this._addPost()
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        }
+        if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._updateNewPostText(action.newText)
+        }
+        if (action.type === 'ADD-MESSAGE') {
+            this._addMessage()
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._updateNewMessageText(action.newText)
         }
     }
 }
+export const addPostActionCreator = () => ({type: 'ADD-POST'})
+export const onPostChangeActionCreator = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text})
+export const addMessageActionCreator = () => ({type: 'ADD-MESSAGE'})
+export const onMessageChangeActionCreator = (text) => ({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text})
 export default store;
