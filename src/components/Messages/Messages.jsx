@@ -1,7 +1,8 @@
 import MessageItem from "./MessageItem/MessageItem";
 import classes from './Messages.module.css'
 import React from "react";
-import {addMessageActionCreator, onMessageChangeActionCreator} from "../../redux/state";
+import {addMessageActionCreator, onMessageChangeActionCreator} from "../../redux/messagepage-reducer";
+import {AiOutlineSend} from "react-icons/ai";
 
 const Message = (props) => {
     return (<>
@@ -33,7 +34,9 @@ const Messages = (props) => {
                 {messageElement}
                 <textarea placeholder='new message' className={classes.textarea} onChange={onMessageChange}
                           ref={newMessageElement} value={props.newMessageText}/>
-                <button onClick={addMessage}>Send</button>
+                <div>
+                    <button onClick={addMessage} className={classes.button}><AiOutlineSend className={classes.icon}/></button>
+                </div>
             </div>
         </div>
 
